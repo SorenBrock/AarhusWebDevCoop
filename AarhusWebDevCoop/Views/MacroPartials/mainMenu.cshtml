@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{ var root = CurrentPage.AncestorOrSelf(1); }
+<ul class="nav navbar-nav">
+    <li class="@(CurrentPage.Name == root.Name ? "active" : null)">
+        <a href="/">@root.Name</a>
+    </li>
+    @foreach (var menuItem in root.Children.Where("Visible"))
+    {
+        var isProtected = umbraco.library.IsProtected(menuItem.Id, menuItem.path);
+        var loginAccess = umbraco.library.IsProtected(menuItem.id, menuItem.path) && umbraco.library.HasAccess(menuItem.id, menuItem.path);
+        if (!isProtected || loginAccess)
+        {
+            if (menuItem.Id == 1085)
+            {
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@menuItem.Name<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>  <a href="@menuItem.Url">Projekt oversigt</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Projekter</li>
+                        @foreach (var children in menuItem.Children)
+                        {
+                            var isChildProtected = umbraco.library.IsProtected(children.Id, children.path);
+                            var loginChildAccess = umbraco.library.IsProtected(children.id, children.path) && umbraco.library.HasAccess(children.id, children.path);
+                            if (!isChildProtected || loginChildAccess)
+                            {
+                                <li>   <a href="@children.Url">@children.Name</a></li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+            else {
+                <li class="@(menuItem.IsAncestorOrSelf(CurrentPage) ? "active" : null)">
+                    <a href="@menuItem.Url">@menuItem.Name</a>
+                </li>
+            }
+        }
+    }
+</ul>

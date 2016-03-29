@@ -1,0 +1,1468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.7.4.1\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.4.1\build\UmbracoCms.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9AEB8A0F-E353-45C8-B976-F69E8DA34787}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AarhusWebDevCoop</RootNamespace>
+    <AssemblyName>AarhusWebDevCoop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.5891.23241, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\businesslogic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.8.4\lib\net45\ClientDependency.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cms, Version=1.0.5891.23241, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\cms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="controls, Version=1.0.5891.23243, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.68.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.0.1.68.0\lib\Examine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.3.3.0\lib\net45\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.5.3.0\lib\net45\ImageProcessor.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.5891.23238, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MarkdownSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.1.14.4\lib\net45\MarkdownSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.0.0\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.5891.23242, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\SQLCE4Umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\TidyNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.5891.23243, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5891.23238, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\Umbraco.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5891.23241, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\umbraco.DataLayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.5891.23246, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\umbraco.editorControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.5891.23246, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\umbraco.MacroEngines.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.ModelsBuilder, Version=3.0.0.90, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.3.0.0\lib\Umbraco.ModelsBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.5891.23243, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\umbraco.providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.5891.23247, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\Umbraco.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.23242, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.4.1\lib\UmbracoExamine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\style.css" />
+    <Content Include="media\1001\soerenbrock_.jpg" />
+    <Content Include="media\1002\jes-arbov.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-2.2.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Scripts\jquery-2.2.0.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Umbraco_Client\Application\Extensions.js" />
+    <Content Include="Umbraco_Client\Application\HistoryManager.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery-fieldselection.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.autocomplete.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.ba-bbq.min.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.cookie.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.hotkeys.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.idle-timer.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.metadata.min.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.noconflict-invoke.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.validate.min.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Umbraco_Client\Application\JQuery\VerticalAlign.js" />
+    <Content Include="Umbraco_Client\Application\NamespaceManager.js" />
+    <Content Include="Umbraco_Client\Application\UmbracoApplicationActions.js" />
+    <Content Include="Umbraco_Client\Application\UmbracoClientManager.js" />
+    <Content Include="Umbraco_Client\Application\UmbracoUtils.js" />
+    <Content Include="Umbraco_Client\Application\UrlEncoder.js" />
+    <Content Include="Umbraco_Client\CodeArea\javascript.js" />
+    <Content Include="Umbraco_Client\CodeArea\styles.css" />
+    <Content Include="Umbraco_Client\CodeArea\UmbracoEditor.js" />
+    <Content Include="Umbraco_Client\Colorpicker\Css\colorpicker.css" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\blank.gif" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_background.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_hex.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_hsb_b.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_hsb_h.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_hsb_s.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_indic.gif" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_overlay.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_rgb_b.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_rgb_g.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_rgb_r.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_select.gif" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\colorpicker_submit.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_background.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_hex.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_hsb_b.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_hsb_h.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_hsb_s.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_indic.gif" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_rgb_b.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_rgb_g.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_rgb_r.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\custom_submit.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\select.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\select2.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Images\slider.png" />
+    <Content Include="Umbraco_Client\Colorpicker\Js\colorpicker.js" />
+    <Content Include="Umbraco_Client\ContextMenu\Css\jquery.contextMenu.css" />
+    <Content Include="Umbraco_Client\ContextMenu\Js\jquery.contextMenu.js" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\active-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\dark-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\hover-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\menuarrow.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\normal-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\rowhover-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\status-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\theme.css" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\title-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Aqua\today-bg.gif" />
+    <Content Include="Umbraco_Client\Datepicker\Images\calPickerIcon.png" />
+    <Content Include="Umbraco_Client\Datepicker\Images\calPickerIconHover.png" />
+    <Content Include="Umbraco_Client\DateTimePicker\datetimepicker.css" />
+    <Content Include="Umbraco_Client\DateTimePicker\Images\calSprite.png" />
+    <Content Include="Umbraco_Client\DateTimePicker\Images\ui-icons_666666_256x240.png" />
+    <Content Include="Umbraco_Client\DateTimePicker\Images\ui-icons_999999_256x240.png" />
+    <Content Include="Umbraco_Client\DateTimePicker\timepicker.js" />
+    <Content Include="Umbraco_Client\DateTimePicker\umbDateTimePicker.js" />
+    <Content Include="Umbraco_Client\Dialogs\AssignDomain2.css" />
+    <Content Include="Umbraco_Client\Dialogs\AssignDomain2.js" />
+    <Content Include="Umbraco_Client\Dialogs\CreateDialog.css" />
+    <Content Include="Umbraco_Client\Dialogs\EditMacro.css" />
+    <Content Include="Umbraco_Client\Dialogs\EditMacro.js" />
+    <Content Include="Umbraco_Client\Dialogs\PublishDialog.css" />
+    <Content Include="Umbraco_Client\Dialogs\PublishDialog.js" />
+    <Content Include="Umbraco_Client\Dialogs\SortDialog.css" />
+    <Content Include="Umbraco_Client\Dialogs\SortDialog.js" />
+    <Content Include="Umbraco_Client\Dialogs\UmbracoField.js" />
+    <Content Include="Umbraco_Client\Editors\DirectoryBrowser.css" />
+    <Content Include="Umbraco_Client\Editors\EditMacro.css" />
+    <Content Include="Umbraco_Client\Editors\EditMacroScripts.js" />
+    <Content Include="Umbraco_Client\Editors\EditScript.js" />
+    <Content Include="Umbraco_Client\Editors\EditStyleSheet.js" />
+    <Content Include="Umbraco_Client\Editors\EditTemplate.js" />
+    <Content Include="Umbraco_Client\Editors\EditView.js" />
+    <Content Include="Umbraco_Client\Editors\EditXslt.css" />
+    <Content Include="Umbraco_Client\Editors\EditXslt.js" />
+    <Content Include="Umbraco_Client\FileUploader\Js\jquery.fileUploader.js" />
+    <Content Include="Umbraco_Client\FolderBrowser\Css\folderbrowser.css" />
+    <Content Include="Umbraco_Client\FolderBrowser\Js\folderbrowser.js" />
+    <Content Include="Umbraco_Client\IconPicker\iconpicker.js" />
+    <Content Include="Umbraco_Client\Imagecropper\Jcrop.gif" />
+    <Content Include="Umbraco_Client\Images\progressbar.gif" />
+    <Content Include="Umbraco_Client\Installer\Css\all.css" />
+    <Content Include="Umbraco_Client\Installer\Css\form.css" />
+    <Content Include="Umbraco_Client\Installer\Css\jquery-ui-1.8.6.custom.css" />
+    <Content Include="Umbraco_Client\Installer\Css\lt7.css" />
+    <Content Include="Umbraco_Client\Installer\Css\reset.css" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-bhuiness-cl.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-bhuiness-cr.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-bhuiness.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-blog-cl.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-blog-cr.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-blog-repeat.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-blog.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-drop-b.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-drop-c.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-drop-t.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-header.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-img-ie.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-img.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-inp-big.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-inp-error.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-inp.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-lightbox-b.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-lightbox-t.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-normal-cl.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-normal-cr.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-normal-repeat.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-normal.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-paging-h.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-paging.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-personal-cl.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-personal-cr.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-personal-repeat.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-personal.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-simple-cl.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-simple-cr.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-simple-repeat.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\bg-simple.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-accept.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-back.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-blog.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-buisness-repeat.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-buisness.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-close.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-confirm.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-continue.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-create-hover.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-create.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-get.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-install-gal.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-install-hover.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-install.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-next.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-no-thanks.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-no.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-personal.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-prev.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-preview-web.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-preview.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-set.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-simple.png" />
+    <Content Include="Umbraco_Client\Installer\Images\btn-yes.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bul1.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bul2.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\bul3.png" />
+    <Content Include="Umbraco_Client\Installer\Images\bul4.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\ico-invalidaing.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ico-validaing.png" />
+    <Content Include="Umbraco_Client\Installer\Images\img01.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img02.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img03.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img04.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img05.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img06.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img07.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img08.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img09.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img10.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\img11.jpg" />
+    <Content Include="Umbraco_Client\Installer\Images\loader.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\logo.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\none.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\pbar-ani.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\pbar.gif" />
+    <Content Include="Umbraco_Client\Installer\Images\select-button.png" />
+    <Content Include="Umbraco_Client\Installer\Images\select-center.png" />
+    <Content Include="Umbraco_Client\Installer\Images\select-left-2.png" />
+    <Content Include="Umbraco_Client\Installer\Images\select-left.png" />
+    <Content Include="Umbraco_Client\Installer\Images\sep1.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-icons_222222_256x240.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Umbraco_Client\Installer\Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Umbraco_Client\Installer\Images\zoom-in.png" />
+    <Content Include="Umbraco_Client\Installer\Js\ie-png.js" />
+    <Content Include="Umbraco_Client\Installer\Js\jquery.1.4.4.js" />
+    <Content Include="Umbraco_Client\Installer\Js\jquery.main.js" />
+    <Content Include="Umbraco_Client\Installer\Js\jquery.ui.selectmenu.js" />
+    <Content Include="Umbraco_Client\Installer\Js\PackageInstaller.js" />
+    <Content Include="Umbraco_Client\Jeditable\jquery.jeditable.js" />
+    <Content Include="Umbraco_Client\MacroContainer\macroContainer.css" />
+    <Content Include="Umbraco_Client\MaskedInput\jquery.maskedinput-1.3.min.js" />
+    <Content Include="Umbraco_Client\Menuicon\Images\buttonbg.gif" />
+    <Content Include="Umbraco_Client\Menuicon\Images\buttonbgdown.gif" />
+    <Content Include="Umbraco_Client\Menuicon\Images\split.gif" />
+    <Content Include="Umbraco_Client\Menuicon\style.css" />
+    <Content Include="Umbraco_Client\Modal\jquery.simplemodal.1.4.1.custom.js" />
+    <Content Include="Umbraco_Client\Modal\modal.js" />
+    <Content Include="Umbraco_Client\Modal\modalBackground.gif" />
+    <Content Include="Umbraco_Client\Modal\modalGradiant.gif" />
+    <Content Include="Umbraco_Client\Modal\style.css" />
+    <Content Include="Umbraco_Client\Mousewheel\jquery.mousewheel.js" />
+    <Content Include="Umbraco_Client\Panel\Images\panel_bg.gif" />
+    <Content Include="Umbraco_Client\Panel\Images\panel_boxfooter_bg.gif" />
+    <Content Include="Umbraco_Client\Panel\Images\panel_boxfooter_statusBar_bg.gif" />
+    <Content Include="Umbraco_Client\Panel\Images\panel_boxfooter_statusBar_h2_bg.gif" />
+    <Content Include="Umbraco_Client\Panel\Images\panel_boxhead_bg.gif" />
+    <Content Include="Umbraco_Client\Panel\Images\panel_boxhead_h2_bg.gif" />
+    <Content Include="Umbraco_Client\Panel\javascript.js" />
+    <Content Include="Umbraco_Client\Panel\style.css" />
+    <Content Include="Umbraco_Client\Preview\previewModeBadge.png" />
+    <Content Include="Umbraco_Client\Preview\umbracoPreview.css" />
+    <Content Include="Umbraco_Client\ProgressBar\Images\container_left.gif" />
+    <Content Include="Umbraco_Client\ProgressBar\Images\container_right.gif" />
+    <Content Include="Umbraco_Client\ProgressBar\Images\indicator.gif" />
+    <Content Include="Umbraco_Client\ProgressBar\javascript.js" />
+    <Content Include="Umbraco_Client\ProgressBar\style.css" />
+    <Content Include="Umbraco_Client\Propertypane\Images\propertyBackground.gif" />
+    <Content Include="Umbraco_Client\Propertypane\Images\proppane_bg.png" />
+    <Content Include="Umbraco_Client\Propertypane\style.css" />
+    <Content Include="Umbraco_Client\PunyCode\punycode.min.js" />
+    <Content Include="Umbraco_Client\Scrollingmenu\Images\arrawBack.gif" />
+    <Content Include="Umbraco_Client\Scrollingmenu\Images\arrowForward.gif" />
+    <Content Include="Umbraco_Client\Scrollingmenu\Images\background.gif" />
+    <Content Include="Umbraco_Client\Scrollingmenu\Images\Button\buttonbg.gif" />
+    <Content Include="Umbraco_Client\Scrollingmenu\Images\Button\buttonbgdown.gif" />
+    <Content Include="Umbraco_Client\Scrollingmenu\javascript.js" />
+    <Content Include="Umbraco_Client\Scrollingmenu\style.css" />
+    <Content Include="Umbraco_Client\SimpleEditor\Images\bold.gif" />
+    <Content Include="Umbraco_Client\SimpleEditor\Images\italic.gif" />
+    <Content Include="Umbraco_Client\SimpleEditor\Images\link.gif" />
+    <Content Include="Umbraco_Client\Splitbutton\Images\splitbutton_downarrow.png" />
+    <Content Include="Umbraco_Client\Splitbutton\Images\splitbutton_hover.png" />
+    <Content Include="Umbraco_Client\Splitbutton\InsertMacroSplitButton.js" />
+    <Content Include="Umbraco_Client\Splitbutton\jquery.splitbutton.js" />
+    <Content Include="Umbraco_Client\Splitbutton\splitbutton.css" />
+    <Content Include="Umbraco_Client\Tablesorting\img\asc.gif" />
+    <Content Include="Umbraco_Client\Tablesorting\img\bg.gif" />
+    <Content Include="Umbraco_Client\Tablesorting\img\desc.gif" />
+    <Content Include="Umbraco_Client\Tablesorting\jquery.tablesorter.min.js" />
+    <Content Include="Umbraco_Client\Tablesorting\tableDragAndDrop.js" />
+    <Content Include="Umbraco_Client\Tablesorting\tableFilter.js" />
+    <Content Include="Umbraco_Client\Tablesorting\tableFilterUtill.js" />
+    <Content Include="Umbraco_Client\Tabview\Images\background.gif" />
+    <Content Include="Umbraco_Client\Tabview\Images\bg.gif" />
+    <Content Include="Umbraco_Client\Tabview\Images\footer_bg.gif" />
+    <Content Include="Umbraco_Client\Tabview\Images\footer_statusBar_bg.gif" />
+    <Content Include="Umbraco_Client\Tabview\Images\footer_statusBar_h2_bg.gif" />
+    <Content Include="Umbraco_Client\Tabview\Images\left_both.gif" />
+    <Content Include="Umbraco_Client\Tabview\Images\right_both.gif" />
+    <Content Include="Umbraco_Client\Tabview\javascript.js" />
+    <Content Include="Umbraco_Client\Tabview\oldstyle.css" />
+    <Content Include="Umbraco_Client\Tabview\style.css" />
+    <Content Include="Umbraco_Client\Tags\Css\jquery.tagsinput.css" />
+    <Content Include="Umbraco_Client\Tags\Js\jquery.tagsinput.js" />
+    <Content Include="Umbraco_Client\Tags\Js\jquery.tagsinput.min.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\da.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\de.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\en_us.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\fi.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\fr.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\he.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\it.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\nl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\no.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\pl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\pt.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\ru.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\license.txt" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Css\advhr.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Js\rule.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advhr\rule.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Css\advimage.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\image.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Img\sample.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Js\image.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Css\advlink.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Js\advlink.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlink\link.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlist\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Advlist\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autolink\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autolink\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autoresize\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autoresize\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autosave\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autosave\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autosave\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Autosave\Langs\en_us.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Bbcode\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Bbcode\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Contextmenu\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Contextmenu\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Directionality\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Directionality\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\emotions.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-cool.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-cry.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-embarassed.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-foot-in-mouth.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-frown.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-innocent.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-kiss.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-laughing.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-money-mouth.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-sealed.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-smile.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-surprised.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-tongue-out.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-undecided.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-wink.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Img\smiley-yell.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Js\emotions.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\dialog.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\Img\example.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\Js\dialog.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Example\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Css\fullpage.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\fullpage.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Js\fullpage.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullscreen\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullscreen\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Fullscreen\fullscreen.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Iespell\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Iespell\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\alert.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\button.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\buttons.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\confirm.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\corners.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\horizontal.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\vertical.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\window.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\alert.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\button.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\buttons.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\close.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\confirm.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\corners.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\horizontal.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\vertical.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\window.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Inlinepopups\template.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Insertdatetime\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Insertdatetime\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Layer\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Layer\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Legacyoutput\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Legacyoutput\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Lists\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Lists\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Css\media.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Js\embed.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Js\media.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\es_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\ko_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\media.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Media\moxieplayer.swf" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Nonbreaking\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Nonbreaking\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Noneditable\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Noneditable\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Pagebreak\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Pagebreak\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Js\pastetext.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Js\pasteword.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\pastetext.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Paste\pasteword.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Preview\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Preview\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Preview\example.html" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Preview\Jscripts\embed.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Preview\preview.html" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Print\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Print\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Save\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Save\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Css\searchreplace.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Js\searchreplace.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Searchreplace\searchreplace.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Spellchecker\Css\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Spellchecker\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Spellchecker\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Spellchecker\Img\wline.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Css\props.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Js\props.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\props.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Style\readme.txt" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Tabfocus\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Tabfocus\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\cell.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Css\cell.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Css\row.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Css\table.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Js\cell.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Js\merge_cells.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Js\row.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Js\table.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\merge_cells.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\row.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Table\table.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\blank.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Css\template.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Js\template.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Template\template.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocontextmenu\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\dialog.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Img\example.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Js\dialog.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\en_us.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\it.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\ru.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\dialog.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Img\ajax-loader.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Img\embed.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Js\dialog.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\da.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\de.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\en_us.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\it.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\ru.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Js\image.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Js\umbracolink.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\dialog.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Img\insMacro.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Js\dialog.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\en_us.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\he.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\ru.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracopaste\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Umbracoshortcut\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Visualblocks\Css\visualblocks.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Visualblocks\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Visualblocks\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Visualchars\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Visualchars\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Wordcount\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Wordcount\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\abbr.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\acronym.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\attributes.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\cite.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Css\attributes.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Css\popup.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\del.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\editor_plugin.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\ins.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\abbr.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\acronym.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\attributes.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\cite.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\del.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\element_common.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\ins.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\about.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\anchor.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\charmap.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\color_picker.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\editor_template.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\editor_template_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\image.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\colorpicker.jpg" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\flash.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\icons.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\iframe.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\pagebreak.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\quicktime.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\realmedia.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\shockwave.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\trans.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\video.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Img\windowsmedia.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\about.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\anchor.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\charmap.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\color_picker.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\image.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\link.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Js\source_editor.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\da.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\de.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\fi.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\fi_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\fr.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\he.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\it.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\nl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\no.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\pl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\pl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\pt.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\pt_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\link.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\shortcuts.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\dialog.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\buttons.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\items.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\menu_arrow.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\menu_check.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\progress.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\tabs.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\ui.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Highcontrast\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Highcontrast\dialog.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Highcontrast\ui.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\dialog.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\Img\button_bg.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\Img\button_bg_black.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\Img\button_bg_silver.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\ui.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\ui_black.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\ui_silver.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Advanced\source_editor.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\editor_template.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\editor_template_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Img\icons.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\da.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\de.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\fi.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\fr.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\he.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\it.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\nl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\no.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\pl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\pt.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Skins\Default\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Skins\Default\ui.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Skins\O2k7\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Skins\O2k7\Img\button_bg.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Simple\Skins\O2k7\ui.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\about.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\anchor.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\charmap.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\color_picker.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\editor_template_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\image.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\colorpicker.jpg" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\flash.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\icons.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\iframe.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\pagebreak.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\quicktime.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\realmedia.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\shockwave.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\trans.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\video.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Img\windowsmedia.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\about.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\anchor.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\charmap.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\color_picker.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\image.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\link.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Js\source_editor.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\da.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\da_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\de.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\de_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\en.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\en_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\en_us.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\en_us_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\es.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\es_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\fr.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\fr_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\he.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\he_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\it.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\it_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\ja.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\ja_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\ko.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\ko_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\nl.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\nl_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\no.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\no_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\ru.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\ru_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\sv.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\sv_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\zh.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\zh_dlg.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\link.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\shortcuts.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\content.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\dialog.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\buttons.png" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\items.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\menu_arrow.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\menu_check.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\progress.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\tabs.gif" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\ui.css" />
+    <Content Include="Umbraco_Client\Tinymce3\Themes\Umbraco\source_editor.htm" />
+    <Content Include="Umbraco_Client\Tinymce3\tiny_mce.js" />
+    <Content Include="Umbraco_Client\Tinymce3\tiny_mce_popup.js" />
+    <Content Include="Umbraco_Client\Tinymce3\tiny_mce_src.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Utils\editable_selects.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Utils\form_utils.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Utils\mctabs.js" />
+    <Content Include="Umbraco_Client\Tinymce3\Utils\validate.js" />
+    <Content Include="Umbraco_Client\Tree\jquery.tree.checkbox.js" />
+    <Content Include="Umbraco_Client\Tree\jquery.tree.contextmenu.js" />
+    <Content Include="Umbraco_Client\Tree\jquery.tree.js" />
+    <Content Include="Umbraco_Client\Tree\jquery.tree.metadata.js" />
+    <Content Include="Umbraco_Client\Tree\menuIcons.css" />
+    <Content Include="Umbraco_Client\Tree\NodeDefinition.js" />
+    <Content Include="Umbraco_Client\Tree\sprites.png" />
+    <Content Include="Umbraco_Client\Tree\sprites_ie6.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Default\dot_for_ie.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Default\icons.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Default\style.css" />
+    <Content Include="Umbraco_Client\Tree\Themes\Default\throbber.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\marker.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\marker_rtl.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\plus.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\remove.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\rename.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\arrows.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\check_0.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\check_1.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\check_2.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\context.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\contextMenuBg.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\create.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\dot.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\f.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\fminus.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\fminus_rtl.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\fplus.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\fplus_rtl.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\icons.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\lastli.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\lastli_rtl.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\li.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\newVersion_overlay.png" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\protect_overlay.gif" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\style.css" />
+    <Content Include="Umbraco_Client\Tree\Themes\Umbraco\throbber.gif" />
+    <Content Include="Umbraco_Client\Tree\treeIcons.css" />
+    <Content Include="Umbraco_Client\Tree\UmbracoContext.js" />
+    <Content Include="Umbraco_Client\Tree\UmbracoTree.js" />
+    <Content Include="Umbraco_Client\Ui\base2.js" />
+    <Content Include="Umbraco_Client\Ui\dd.css" />
+    <Content Include="Umbraco_Client\Ui\dd_arrow.gif" />
+    <Content Include="Umbraco_Client\Ui\default.css" />
+    <Content Include="Umbraco_Client\Ui\default.js" />
+    <Content Include="Umbraco_Client\Ui\jquery.alphanumeric.js" />
+    <Content Include="Umbraco_Client\Ui\jquery.dd.js" />
+    <Content Include="Umbraco_Client\Ui\jquery.js" />
+    <Content Include="Umbraco_Client\Ui\jquery.tooltip.min.js" />
+    <Content Include="Umbraco_Client\Ui\jqueryui.js" />
+    <Content Include="Umbraco_Client\Ui\jQueryWresize.js" />
+    <Content Include="Umbraco_Client\Ui\json2.js" />
+    <Content Include="Umbraco_Client\Ui\knockout.js" />
+    <Content Include="Umbraco_Client\Ui\knockout.mapping.js" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Umbraco_Client\Ui\ui-lightness\jquery-ui.custom.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Config\UrlRewriting.config" />
+    <Content Include="Config\umbracoSettings.config" />
+    <Content Include="Config\trees.config" />
+    <Content Include="Config\tinyMceConfig.config" />
+    <Content Include="Config\scripting.config" />
+    <Content Include="Config\metablogConfig.config" />
+    <Content Include="Config\log4net.config" />
+    <Content Include="Config\FileSystemProviders.config" />
+    <Content Include="Config\feedProxy.config" />
+    <Content Include="Config\ExamineSettings.config" />
+    <Content Include="Config\ExamineIndex.config" />
+    <Content Include="Config\EmbeddedMedia.config" />
+    <Content Include="Config\Dashboard.config" />
+    <Content Include="Config\ClientDependency.config" />
+    <Content Include="Config\BaseRestExtensions.config" />
+    <Content Include="Config\applications.config" />
+    <Content Include="Config\404handlers.config" />
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Views\About.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\News.cshtml" />
+    <Content Include="Views\ProjectItem.cshtml" />
+    <Content Include="Views\ProjectMain.cshtml" />
+    <Content Include="Views\MacroPartials\Breadcrumbs.cshtml" />
+    <Content Include="Views\MacroPartials\mainMenu.cshtml" />
+    <None Include="Properties\PublishProfiles\AarhusWebCoop - Web Deploy.pubxml" />
+    <Content Include="Views\MacroPartials\Login.cshtml" />
+    <Content Include="Views\Login.cshtml" />
+    <Content Include="Views\Members.cshtml" />
+    <Content Include="Views\Partials\ContactFormPartial.cshtml" />
+    <Content Include="Views\Restricted.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-2.2.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="Config\grid.editors.config.js" />
+    <Content Include="Config\Lang\cs-CZ.user.xml" />
+    <Content Include="Config\Lang\da-DK.user.xml" />
+    <Content Include="Config\Lang\de-DE.user.xml" />
+    <Content Include="Config\Lang\en-GB.user.xml" />
+    <Content Include="Config\Lang\en-US.user.xml" />
+    <Content Include="Config\Lang\es-ES.user.xml" />
+    <Content Include="Config\Lang\fr-FR.user.xml" />
+    <Content Include="Config\Lang\he-IL.user.xml" />
+    <Content Include="Config\Lang\it-IT.user.xml" />
+    <Content Include="Config\Lang\ja-JP.user.xml" />
+    <Content Include="Config\Lang\ko-KR.user.xml" />
+    <Content Include="Config\Lang\nb-NO.user.xml" />
+    <Content Include="Config\Lang\nl-NL.user.xml" />
+    <Content Include="Config\Lang\pl-PL.user.xml" />
+    <Content Include="Config\Lang\pt-BR.user.xml" />
+    <Content Include="Config\Lang\ru-RU.user.xml" />
+    <Content Include="Config\Lang\sv-SE.user.xml" />
+    <Content Include="Config\Lang\zh-CN.user.xml" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="default.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\ContactFormSurfaceController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\ContactForm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56121</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56121/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.4.1\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.4.1\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.4.1\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.4.1\build\UmbracoCms.targets'))" />
+  </Target>
+  <Import Project="..\packages\UmbracoCms.7.4.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.4.1\build\UmbracoCms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

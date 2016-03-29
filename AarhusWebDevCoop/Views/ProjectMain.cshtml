@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectMain>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+
+}
+<h1>@Umbraco.Field("header")</h1>
+@Umbraco.Field("mainContent")
+<hr>
+@foreach (var page in CurrentPage.Children.OrderBy("CreateDate desc"))
+{
+    var isProtected = umbraco.library.IsProtected(page.Id, page.path);
+    var loginAccess = umbraco.library.IsProtected(page.id, page.path) && umbraco.library.HasAccess(page.id, page.path);
+    if (!isProtected || loginAccess)
+    {
+        <div>
+            <h3>@page.title (@page.CreateDate.ToString("MM/dd-yyyy HH:mm"))</h3>
+            <h4>Status: @umbraco.library.GetPreValueAsString(page.status)</h4>
+            <dd>@Html.Raw(page.info.ToString().Substring(0, 470))...<br /><a href="@page.Url">Læs mere</a></dd>
+        </div>
+    }
+}
