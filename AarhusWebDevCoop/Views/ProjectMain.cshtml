@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectMain>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
@@ -16,7 +16,7 @@
         <div>
             <h3>@page.title (@page.CreateDate.ToString("MM/dd-yyyy HH:mm"))</h3>
             <h4>Status: @umbraco.library.GetPreValueAsString(page.status)</h4>
-            <dd>@Html.Raw(page.info.ToString().Substring(0, 470))...<br /><a href="@page.Url">Læs mere</a></dd>
+            <dd>@Umbraco.StripHtml(page.info.ToString().Substring(0, 470))...<br /><a href="@page.Url">Læs mere</a></dd>
         </div>
     }
 }

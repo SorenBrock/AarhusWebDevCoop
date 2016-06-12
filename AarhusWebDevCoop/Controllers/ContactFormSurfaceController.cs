@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Web;
+﻿using System.Net.Mail;
 using System.Web.Mvc;
 using AarhusWebDevCoop.ViewModel;
 using Umbraco.Web.Mvc;
-using Umbraco.Core.Models;
 
 namespace AarhusWebDevCoop.Controllers
 {
@@ -21,7 +16,7 @@ namespace AarhusWebDevCoop.Controllers
         public ActionResult HandleFormSubmit(ContactForm model)
         {
             if (!ModelState.IsValid) { return CurrentUmbracoPage(); }
-            using (var smtp = new SmtpClient())
+            using (var smtp = new SmtpClient()) 
             {
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.UseDefaultCredentials = false;
@@ -38,7 +33,7 @@ namespace AarhusWebDevCoop.Controllers
                 //smtp.Send(message);
             }
 
-            var comment = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "Comment");
+            var comment = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "Comment"); // CONTENT API
             comment.SetValue("commentName", model.Name);
             comment.SetValue("email", model.Email);
             comment.SetValue("subject", model.Subject);

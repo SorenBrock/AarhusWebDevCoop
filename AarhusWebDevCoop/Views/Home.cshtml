@@ -1,8 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
     var site = Umbraco.Content(1085);
+  
 }
 <h1>@Umbraco.Field("header")</h1>
 @Umbraco.Field("mainContent")
@@ -13,8 +13,8 @@
         <div class="col-md-4">
             <div class="well well-sm">
                 <h4>Projekt: @menuItem.title</h4>
-                <dd>Oprettet: @menuItem.CreateDate.ToString("MM/dd-yyyy")</dd><br />
-                <dd>@Html.Raw(menuItem.info.ToString().Substring(0, 200))...<br /><br /><a href="@menuItem.Url">Læs mere</a></dd>
+                <dl>Oprettet: @menuItem.CreateDate.ToString("MM/dd-yyyy")</dl><br />
+                <dl>@Umbraco.StripHtml(menuItem.info.ToString().Substring(0, 200))</dl>
             </div>
         </div>
     }
