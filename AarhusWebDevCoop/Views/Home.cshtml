@@ -2,12 +2,10 @@
 @{
     Layout = "Master.cshtml";
     var site = Umbraco.Content(1085);
-  
 }
 <h1>@Umbraco.Field("header")</h1>
 @Umbraco.Field("mainContent")
 <div class="row">
-
     @foreach (var menuItem in site.Children.Where("Status  == 17").Take(3))
     {
         <div class="col-md-4">

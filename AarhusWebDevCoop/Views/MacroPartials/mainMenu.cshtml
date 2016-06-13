@@ -9,8 +9,8 @@
     </li>
     @foreach (var menuItem in root.Children.Where("Visible"))
     {
-        var isProtected = umbraco.library.IsProtected(menuItem.Id, menuItem.path);
-        var loginAccess = umbraco.library.IsProtected(menuItem.id, menuItem.path) && umbraco.library.HasAccess(menuItem.id, menuItem.path);
+        var isProtected = Umbraco.IsProtected(menuItem.Id, menuItem.path);
+        var loginAccess = Umbraco.IsProtected(menuItem.id, menuItem.path) && Umbraco.MemberHasAccess(menuItem.id, menuItem.path);
         if (!isProtected || loginAccess)
         {
             if (menuItem.Id == 1085)    
@@ -23,8 +23,8 @@
                         <li class="dropdown-header">Projekter</li>
                         @foreach (var children in menuItem.Children)
                         {
-                            var isChildProtected = umbraco.library.IsProtected(children.Id, children.path);
-                            var loginChildAccess = umbraco.library.IsProtected(children.id, children.path) && umbraco.library.HasAccess(children.id, children.path);
+                            var isChildProtected = Umbraco.IsProtected(children.Id, children.path);
+                            var loginChildAccess = Umbraco.IsProtected(children.id, children.path) && Umbraco.MemberHasAccess(children.id, children.path);
                             if (!isChildProtected || loginChildAccess)
                             {
                                 <li>   <a href="@children.Url">@children.Name</a></li>

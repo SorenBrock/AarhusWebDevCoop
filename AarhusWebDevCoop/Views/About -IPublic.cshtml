@@ -1,0 +1,6 @@
+﻿@inherits UmbracoViewPage
+@{
+    Layout = "Master.cshtml";
+}
+<h1>@Model.GetProperty("header").Value</h1>
+@Html.GetGridHtml(Model, "mainContent")
